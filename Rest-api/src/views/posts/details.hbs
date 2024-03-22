@@ -1,0 +1,29 @@
+     <section id="detailsPage">
+            <div id="detailsInfo">
+                <h1>Title: {{post.title}}</h1>
+                <div><img src="{{post.image}}"></div>
+
+                <div class="info">
+                    <p>Text:{{text}}</p>
+                </div>
+
+               {{#if isAuthenticated}}
+                <div class="buttons">
+                    {{#if isOwner}}
+                    <a href="/posts/details/{{post._id}}/edit" class="edit-btn">Edit</a>
+                    <a href="/posts/details/{{post._id}}/delete" class="delete-btn">Delete</a>
+                    {{/if}}
+                    {{#unless isOwner}}
+                        {{#if isLike}}
+                    <p><span class="buy">Thank You For Your Likes</span></p>
+                        {{else}}
+                    <a href="/posts/details/{{post._id}}/like" class="buy-btn">Like</a>
+                        {{/if}}
+                   
+                    {{/unless}}
+
+
+                </div>
+                {{/if}}
+            </div>
+        </section>

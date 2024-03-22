@@ -1,0 +1,12 @@
+footer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background-color: #2B3035;
+  color: wheat;
+}
+
+p {
+  margin: 0 auto;
+  padding: 20px;
+}
