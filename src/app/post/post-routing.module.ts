@@ -8,7 +8,7 @@ import {AddPostComponent} from "./add-post/add-post.component";
 
 const routes: Routes = [
   {
-    path: 'themes',
+    path: 'catalog',
     children: [
       { path: '', pathMatch: 'full', component: MainComponent },
       { path: ':postId', component: CurrentPostComponent },
@@ -25,4 +25,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
 })
-export class ThemeRoutingModule {}
+export class PostRoutingModule {}

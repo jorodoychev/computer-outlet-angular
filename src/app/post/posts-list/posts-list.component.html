@@ -1,12 +1,19 @@
-<div class="card mt-5 mb-5">
-  <img src="https://m.media-amazon.com/images/S/aplus-media/vc/779be7f4-dbad-458a-bc30-f793cd214059.jpg"
-       class="card-img-top" alt="...">
-  <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content.
-      This content is a little bit longer.</p>
-    <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+<div class="container pb-5">
+  <div *ngFor="let post of posts" class="card mt-5 mb-5">
+    <img src="{{post.imgUrl}}"
+         class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">{{post.title}}</h5>
+      <p class="card-text">{{post.description}}</p>
+      <p class="card-text"><small class="text-body-secondary">{{post.created_at}}</small></p>
+      <a [routerLink]="post._id" class="normal">
+        <h2>{{ post._id }}</h2>
+      </a>
+    </div>
   </div>
 </div>
+
+
+
 
 

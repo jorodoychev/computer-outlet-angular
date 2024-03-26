@@ -1,1 +1,67 @@
-<p>login works!</p>
+<div class="container">
+  <form #form="ngForm" (ngSubmit)="login(form)">
+    <fieldset class="w-50 m-auto pt-5">
+
+      <h2>Login</h2>
+
+    <div class="mb-3">
+      <label for="email" class="form-label">Email</label>
+      <input
+        type="email"
+        class="form-control"
+        id="email"
+        name="email"
+        autocomplete="email"
+        placeholder="john@gmail.com"
+        ngModel email="true"
+        #email="ngModel"
+        required
+      />
+      <ng-container *ngIf="email.touched">
+        <p class="error" *ngIf="email.errors?.['required']">
+          Email is required!
+        </p>
+        <p class="error" *ngIf="email.errors?.['email']">
+          Email is not valid!
+        </p>
+      </ng-container>
+    </div>
+
+      <div class="mb-3">
+        <label for="password" class="form-label">Password</label>
+        <input
+          type="password"
+          class="form-control"
+          id="password"
+          name="password"
+          autocomplete="password"
+          ngModel
+          #password="ngModel"
+          required
+          minlength="6"
+        />
+        <ng-container *ngIf="password.touched">
+          <p class="error" *ngIf="password.errors?.['required']">
+            Password is required!
+          </p>
+          <p class="error" *ngIf="password.errors?.['minlength']">
+            Password must be at least 6 characters!
+          </p>
+        </ng-container>
+      </div>
+
+    <button
+      [disabled]="form.invalid" [style]="{ backgroundColor: form.invalid ? 'grey' : 'blue' }"
+      class="btn btn-primary">Login</button>
+      <ng-container>
+        <p class="error" *ngIf="loginFailed">
+          User not registered!
+        </p>
+      </ng-container>
+      <p class="text-center">
+        Don't have an account?
+        <a routerLink="/register">Register</a>
+      </p>
+    </fieldset>
+  </form>
+</div>

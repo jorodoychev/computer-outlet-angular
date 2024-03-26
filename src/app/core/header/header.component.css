@@ -1,5 +1,6 @@
 a.nav-link {
   color: wheat;
+  cursor: pointer;
 }
 
 .form-control::placeholder {
