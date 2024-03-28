@@ -1,6 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {Post} from "../../../types/post";
-import {ApiService} from "../../api.service";
+import {PostService} from "../post.service";
+import * as moment from 'moment';
+
 
 @Component({
   selector: 'app-posts-list',
@@ -10,13 +12,15 @@ import {ApiService} from "../../api.service";
 export class PostsListComponent implements OnInit {
   posts: Post[] | null = []
 
-  constructor(private api: ApiService) {
+  constructor(private api: PostService) {
 
   }
 
   ngOnInit() {
     this.api.getPosts().subscribe(posts => {
       this.posts = Object.values(posts)
-    })
+        .map(post => ({...post, timeSinceCreation: moment(post.created_at).fromNow()}));
+    });
+
   }
 }

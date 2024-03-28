@@ -8,12 +8,13 @@ import {CoreModule} from "./core/core.module";
 import {SharedModule} from "./shared/shared.module";
 import {HttpClientModule} from "@angular/common/http";
 import {UserModule} from "./user/user.module";
-import { ErrorComponent } from './error/error.component';
+import {NotFoundComponent} from "./not-found/not-found.component";
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    ErrorComponent
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,

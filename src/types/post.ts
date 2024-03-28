@@ -4,4 +4,6 @@ export interface Post {
   imgUrl: string;
   description: string;
   created_at: string;
+  timeSinceCreation: string;
+  userId:string;
 }

@@ -17,7 +17,7 @@ export class UserService {
   constructor(private http: HttpClient) {
 
     localStorage.getItem('accessToken')
-    this.user = JSON.parse(localStorage.getItem('user') || '{}')
+    this.user = JSON.parse(localStorage.getItem('user') || 'null')
   }
 
   get isLogged(): boolean {
@@ -38,8 +38,8 @@ export class UserService {
     return this.http.post<UserForAuth>(this.url + '/login', body)
       .pipe(
         tap(response => {
-          localStorage.setItem('user', JSON.stringify(response))
           localStorage.setItem('accessToken', response.accessToken)
+          localStorage.setItem('user', JSON.stringify(response))
           this.user = response
         })
       )
@@ -56,7 +56,7 @@ export class UserService {
       .pipe(
         tap(response => {
           localStorage.setItem('accessToken', response.accessToken)
-          localStorage.setItem('username', response.username)
+          localStorage.setItem('user', JSON.stringify(response))
           this.user = response
         })
       )
@@ -66,7 +66,6 @@ export class UserService {
   logout() {
     this.user = undefined
     localStorage.removeItem('accessToken')
-    localStorage.removeItem('username')
   }
 
 }

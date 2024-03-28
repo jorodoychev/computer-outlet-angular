@@ -7,6 +7,7 @@ import {UserRoutingModule} from "./user-routing.module";
 import {RouterModule} from "@angular/router";
 import {SharedModule} from "../shared/shared.module";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import { MyPostsComponent } from './my-posts/my-posts.component';
 
 
 
@@ -14,7 +15,8 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
   declarations: [
     LoginComponent,
     ProfileComponent,
-    RegisterComponent
+    RegisterComponent,
+    MyPostsComponent
   ],
     imports: [
         CommonModule,

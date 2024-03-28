@@ -19,10 +19,16 @@
         </ng-container>
         <ng-container *ngIf="isLoggedIn">
           <li class="nav-item">
-            <a class="nav-link" (click)="logout()">Logout</a>
+            <a class="nav-link" routerLink="/add-post">Create post</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link">Hello, {{ username }}</a>
+            <a class="nav-link" routerLink="/my-posts">My posts</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/profile">Profile</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" (click)="logout()">Logout</a>
           </li>
         </ng-container>
       </ul>

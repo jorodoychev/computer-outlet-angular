@@ -4,28 +4,28 @@
 
       <h2>Login</h2>
 
-    <div class="mb-3">
-      <label for="email" class="form-label">Email</label>
-      <input
-        type="email"
-        class="form-control"
-        id="email"
-        name="email"
-        autocomplete="email"
-        placeholder="john@gmail.com"
-        ngModel email="true"
-        #email="ngModel"
-        required
-      />
-      <ng-container *ngIf="email.touched">
-        <p class="error" *ngIf="email.errors?.['required']">
-          Email is required!
-        </p>
-        <p class="error" *ngIf="email.errors?.['email']">
-          Email is not valid!
-        </p>
-      </ng-container>
-    </div>
+      <div class="mb-3">
+        <label for="email" class="form-label">Email</label>
+        <input
+          type="email"
+          class="form-control"
+          id="email"
+          name="email"
+          autocomplete="email"
+          placeholder="john@gmail.com"
+          ngModel email="true"
+          #email="ngModel"
+          required
+        />
+        <ng-container *ngIf="email.touched">
+          <p class="error" *ngIf="email.errors?.['required']">
+            Email is required!
+          </p>
+          <p class="error" *ngIf="email.errors?.['email']">
+            Email is not valid!
+          </p>
+        </ng-container>
+      </div>
 
       <div class="mb-3">
         <label for="password" class="form-label">Password</label>
@@ -50,12 +50,13 @@
         </ng-container>
       </div>
 
-    <button
-      [disabled]="form.invalid" [style]="{ backgroundColor: form.invalid ? 'grey' : 'blue' }"
-      class="btn btn-primary">Login</button>
+      <button
+        [disabled]="form.invalid" [style]="{ backgroundColor: form.invalid ? 'grey' : 'blue' }"
+        class="btn btn-primary">Login
+      </button>
       <ng-container>
         <p class="error" *ngIf="loginFailed">
-          User not registered!
+          Email or password are wrong!
         </p>
       </ng-container>
       <p class="text-center">
