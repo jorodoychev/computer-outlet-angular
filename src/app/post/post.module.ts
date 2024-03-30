@@ -6,6 +6,7 @@ import {CurrentPostComponent} from './current-post/current-post.component';
 import {PostsListComponent} from './posts-list/posts-list.component';
 import {PostRoutingModule} from "./post-routing.module";
 import {FormsModule} from "@angular/forms";
+import { UpdatePostComponent } from './update-post/update-post.component';
 
 
 @NgModule({
@@ -13,7 +14,8 @@ import {FormsModule} from "@angular/forms";
     MainComponent,
     AddPostComponent,
     CurrentPostComponent,
-    PostsListComponent
+    PostsListComponent,
+    UpdatePostComponent,
   ],
   exports: [
     MainComponent

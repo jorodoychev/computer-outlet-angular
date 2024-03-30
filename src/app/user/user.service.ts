@@ -65,7 +65,7 @@ export class UserService {
 
   logout() {
     this.user = undefined
-    localStorage.removeItem('accessToken')
+    localStorage.removeItem('user')
   }
 
 }

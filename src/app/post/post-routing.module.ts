@@ -3,8 +3,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { MainComponent } from './main/main.component';
 import {CurrentPostComponent} from "./current-post/current-post.component";
 import {AddPostComponent} from "./add-post/add-post.component";
-
 import { AuthActivate } from '../guards/auth.activate';
+import {UpdatePostComponent} from "./update-post/update-post.component";
 
 const routes: Routes = [
   {
@@ -17,6 +17,11 @@ const routes: Routes = [
   {
     path: 'add-post',
     component: AddPostComponent,
+    canActivate: [AuthActivate],
+  },
+  {
+    path: 'update-post/:postId',
+    component: UpdatePostComponent,
     canActivate: [AuthActivate],
   },
 ];

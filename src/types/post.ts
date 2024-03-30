@@ -1,9 +1,12 @@
 export interface Post {
+  userId: string;
   _id: string;
   title: string;
   imgUrl: string;
   description: string;
-  created_at: string;
+  price: string;
   timeSinceCreation: string;
-  userId:string;
+  likes: number
+  users_liked:string[]
+  created_at: Date;
 }

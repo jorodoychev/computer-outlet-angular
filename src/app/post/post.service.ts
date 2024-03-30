@@ -6,7 +6,9 @@ import {Post} from "../../types/post";
   providedIn: 'root'
 })
 export class PostService {
+
   private apiUrl = 'http://localhost:3030/jsonstore/computer-outlet/'
+
 
   constructor(private http: HttpClient) {
   }
@@ -19,15 +21,27 @@ export class PostService {
     return this.http.get<Post>(this.apiUrl + postId)
   }
 
-  createPost(postData: { imgUrl: string; description: string; title: string }) {
+  createPost(postData: {
+    imgUrl: string;
+    description: string;
+    title: string;
+    price: string
+  }) {
     return this.http.post<Post>(this.apiUrl, postData)
   }
 
-  updatePost(postId: string, postData: string) {
+  updatePost(postId: string, postData:{
+    imgUrl: string;
+    description: string;
+    title: string; price: string;
+    likes: number;
+    users_liked: string[];
+  }) {
     return this.http.put<Post>(this.apiUrl + postId, postData)
   }
 
   deletePost(postId: string) {
     return this.http.delete(this.apiUrl + postId)
   }
+
 }

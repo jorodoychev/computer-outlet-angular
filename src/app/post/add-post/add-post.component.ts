@@ -20,12 +20,17 @@ export class AddPostComponent {
       return
     }
 
-    const userId = JSON.parse(localStorage.getItem('user') || 'null')?._id
+
+    const user = JSON.parse(localStorage.getItem('user') || 'null')
+    const userId = user ? user._id : undefined
 
     const postData = {
       title: form.value.title,
       imgUrl: form.value.imgUrl,
       description: form.value.description,
+      price: form.value.price,
+      likes: 0,
+      users_liked: [userId],
       created_at: new Date(),
       userId: userId
     }
