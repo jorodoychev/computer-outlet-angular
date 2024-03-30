@@ -30,7 +30,7 @@ export class PostService {
     return this.http.post<Post>(this.apiUrl, postData)
   }
 
-  updatePost(postId: string, postData:{
+  updatePost(postId: string, postData: {
     imgUrl: string;
     description: string;
     title: string; price: string;
@@ -42,6 +42,31 @@ export class PostService {
 
   deletePost(postId: string) {
     return this.http.delete(this.apiUrl + postId)
+  }
+
+  increaseLikes(post: Post): void {
+    if (post._id) {
+      if (post.timeSinceCreation) {
+        post.timeSinceCreation = ''
+      }
+      if (post.users_liked.includes(post.userId)) {
+        return
+      }
+
+      post.likes += 1
+      post.users_liked.push(post.userId)
+
+      this.updatePost(post._id, post).subscribe(
+        {
+          error: (err) => {
+            if (err) {
+              console.log(err)
+            }
+          }
+
+        })
+
+    }
   }
 
 }

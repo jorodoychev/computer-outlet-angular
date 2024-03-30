@@ -11,7 +11,7 @@
           class="form-control"
           id="title"
           name="title"
-          autocomplete=""
+          autocomplete="on"
           placeholder="title"
           ngModel
           #title="ngModel"
@@ -35,7 +35,7 @@
           class="form-control"
           id="imgUrl"
           name="imgUrl"
-          autocomplete=""
+          autocomplete="on"
           placeholder="imgUrl"
           ngModel
           #imgUrl="ngModel"
@@ -60,7 +60,7 @@
           class="form-control"
           id="description"
           name="description"
-          autocomplete=""
+          autocomplete="on"
           placeholder="description"
           ngModel
           #description="ngModel"
@@ -84,7 +84,7 @@
           class="form-control"
           id="price"
           name="price"
-          autocomplete="number"
+          autocomplete="on"
           placeholder="price"
           ngModel
           #price="ngModel"
@@ -103,7 +103,8 @@
 
       <button
         [disabled]="form.invalid" [style]="{ backgroundColor: form.invalid ? 'grey' : 'blue' }"
-        class="btn btn-primary">Create post</button>
+        class="btn btn-primary">Create post
+      </button>
       <ng-container>
         <p class="error" *ngIf="createPostFailed">
           Post is not created!

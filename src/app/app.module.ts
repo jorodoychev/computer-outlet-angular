@@ -9,12 +9,13 @@ import {SharedModule} from "./shared/shared.module";
 import {HttpClientModule} from "@angular/common/http";
 import {UserModule} from "./user/user.module";
 import {NotFoundComponent} from "./not-found/not-found.component";
+import {FormsModule} from "@angular/forms";
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    NotFoundComponent
+    NotFoundComponent,
   ],
   imports: [
     BrowserModule,
@@ -24,6 +25,7 @@ import {NotFoundComponent} from "./not-found/not-found.component";
     UserModule,
     PostModule,
     AppRoutingModule,
+    FormsModule,
 
   ],
   providers: [],

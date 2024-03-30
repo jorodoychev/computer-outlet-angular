@@ -24,10 +24,6 @@ export class UserService {
     return !!this.user
   }
 
-  get username() {
-    return this.user?.username
-  }
-
 
   login(email: string, password: string): Observable<UserForAuth> {
     const body = {
@@ -61,7 +57,6 @@ export class UserService {
         })
       )
   }
-
 
   logout() {
     this.user = undefined

@@ -1,16 +1,16 @@
 import {Component, OnInit} from '@angular/core';
-import {ActivatedRoute, Router} from "@angular/router";
 import {Post} from "../../../types/post";
-import {PostService} from "../post.service";
-import * as moment from "moment/moment";
-import {UserService} from "../../user/user.service";
+import {PostService} from "../../post/post.service";
+import {UserService} from "../user.service";
+import {ActivatedRoute, Router} from "@angular/router";
+import * as moment from "moment";
 
 @Component({
-  selector: 'app-current-post',
-  templateUrl: './current-post.component.html',
-  styleUrls: ['./current-post.component.css']
+  selector: 'app-my-post',
+  templateUrl: './my-post.component.html',
+  styleUrls: ['./my-post.component.css']
 })
-export class CurrentPostComponent implements OnInit {
+export class MyPostComponent implements OnInit {
   deletePostFailed: boolean | undefined
 
   post: Post = {} as Post
@@ -60,7 +60,7 @@ export class CurrentPostComponent implements OnInit {
   deletePost() {
     if (this.isOwner) {
       if (this.post._id) {
-        if (window.confirm("Are you sure you want to delete yours post?")) {
+        if (window.confirm("Are you sure you want to delete this post?")) {
           this.apiService.deletePost(this.post._id).subscribe({
             next: () => {
               this.router.navigate(['/catalog'])

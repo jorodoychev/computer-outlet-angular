@@ -11,7 +11,7 @@
           class="form-control"
           id="title"
           name="title"
-          autocomplete=""
+          autocomplete="on"
           placeholder="title"
           [(ngModel)]="post.title"
           #title="ngModel"
@@ -35,7 +35,7 @@
           class="form-control"
           id="imgUrl"
           name="imgUrl"
-          autocomplete=""
+          autocomplete="on"
           placeholder="imgUrl"
           [(ngModel)]="post.imgUrl"
           #imgUrl="ngModel"
@@ -60,7 +60,7 @@
           class="form-control"
           id="description"
           name="description"
-          autocomplete=""
+          autocomplete="on"
           placeholder="description"
           [(ngModel)]="post.description"
           #description="ngModel"
@@ -84,7 +84,7 @@
           class="form-control"
           id="price"
           name="price"
-          autocomplete="number"
+          autocomplete="on"
           placeholder="price"
           [(ngModel)]="post.price"
           #price="ngModel"
@@ -103,7 +103,8 @@
 
       <button
         [disabled]="form.invalid" [style]="{ backgroundColor: form.invalid ? 'grey' : 'blue' }"
-        class="btn btn-primary">Update post</button>
+        class="btn btn-primary">Update post
+      </button>
       <ng-container>
         <p class="error" *ngIf="updatePostFailed">
           Post update is not created!

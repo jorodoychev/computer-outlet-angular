@@ -3,10 +3,10 @@
     <img src="{{post.imgUrl}}"
          class="card-img-top" alt="...">
     <div class="card-body">
-      <h5 class="card-title">{{post.title}}</h5>
-      <p class="card-text">{{post.description}}</p>
-      <p class="card-text">{{post.price}}</p>
-      <p class="card-text"><small class="text-body-secondary">{{post.timeSinceCreation}}</small></p>
+      <h5 class="card-title">{{ post.title }}</h5>
+      <p class="card-text">{{ post.description }}</p>
+      <p class="card-text">{{ post.price }}</p>
+      <p class="card-text"><small class="text-body-secondary">{{ post.timeSinceCreation }}</small></p>
       <p class="d-flex justify-content-center"><a [routerLink]="post._id" class="btn btn-secondary">Read more</a></p>
     </div>
   </div>
