@@ -1,6 +1,7 @@
 import {Component} from '@angular/core';
 import {UserService} from "../../user/user.service";
 import {Router} from "@angular/router";
+import {SearchService} from "../../search.service";
 
 @Component({
   selector: 'app-header',
@@ -9,7 +10,13 @@ import {Router} from "@angular/router";
 })
 export class HeaderComponent {
   constructor(
-    private userService: UserService, private router: Router) {
+    private userService: UserService,
+    private searchService: SearchService,
+    private router: Router) {
+  }
+  onSearch(event: Event) {
+    const target = event.target as HTMLInputElement
+    this.searchService.search(target.value)
   }
 
   get isLoggedIn(): boolean {

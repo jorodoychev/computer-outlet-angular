@@ -8,6 +8,7 @@ import {PostRoutingModule} from "./post-routing.module";
 import {FormsModule} from "@angular/forms";
 import {UpdatePostComponent} from './update-post/update-post.component';
 import {UserModule} from "../user/user.module";
+import {SharedModule} from "../shared/shared.module";
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import {UserModule} from "../user/user.module";
     CommonModule,
     PostRoutingModule,
     FormsModule,
-    UserModule
+    UserModule,
+    SharedModule
   ]
 })
 export class PostModule {

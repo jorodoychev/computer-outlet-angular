@@ -10,6 +10,7 @@ import {HttpClientModule} from "@angular/common/http";
 import {UserModule} from "./user/user.module";
 import {NotFoundComponent} from "./not-found/not-found.component";
 import {FormsModule} from "@angular/forms";
+import {SearchService} from "./search.service";
 
 
 @NgModule({
@@ -28,7 +29,7 @@ import {FormsModule} from "@angular/forms";
     FormsModule,
 
   ],
-  providers: [],
+  providers: [SearchService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
