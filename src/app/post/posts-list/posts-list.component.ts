@@ -30,15 +30,17 @@ export class PostsListComponent implements OnInit, OnDestroy {
       } else {
         this.filteredPosts = this.posts
       }
-    });
-
-    this.api.getPosts().subscribe(posts => {
-      this.posts = Object.values(posts)
-        .map(post => ({...post, timeSinceCreation: moment(post.created_at).fromNow()}))
-      this.filteredPosts = this.posts
-      this.isLoading = false
     })
 
+
+    this.api.getPosts().subscribe(posts => {
+      setTimeout(() => {
+        this.posts = Object.values(posts)
+          .map(post => ({...post, timeSinceCreation: moment(post.created_at).fromNow()}))
+        this.filteredPosts = this.posts
+        this.isLoading = false
+      }, 300)
+    })
   }
 
   ngOnDestroy() {

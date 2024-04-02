@@ -9,11 +9,13 @@ import {SearchService} from "../../search.service";
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent {
+
   constructor(
     private userService: UserService,
     private searchService: SearchService,
     private router: Router) {
   }
+
   onSearch(event: Event) {
     const target = event.target as HTMLInputElement
     this.searchService.search(target.value)
@@ -21,6 +23,10 @@ export class HeaderComponent {
 
   get isLoggedIn(): boolean {
     return this.userService.isLogged
+  }
+
+  get isCatalogPage(): boolean {
+    return this.router.url === '/catalog'
   }
 
 
