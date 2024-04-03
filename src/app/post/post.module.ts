@@ -20,15 +20,15 @@ import {SharedModule} from "../shared/shared.module";
     UpdatePostComponent,
   ],
   exports: [
-    MainComponent
+    MainComponent,
   ],
-  imports: [
-    CommonModule,
-    PostRoutingModule,
-    FormsModule,
-    UserModule,
-    SharedModule
-  ]
+    imports: [
+        CommonModule,
+        PostRoutingModule,
+        FormsModule,
+        UserModule,
+        SharedModule,
+    ]
 })
 export class PostModule {
 }

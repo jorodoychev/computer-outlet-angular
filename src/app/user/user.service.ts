@@ -24,6 +24,10 @@ export class UserService {
     return !!this.user
   }
 
+  get username(): string | undefined {
+    return this.user?.username
+  }
+
 
   login(email: string, password: string): Observable<UserForAuth> {
     const body = {

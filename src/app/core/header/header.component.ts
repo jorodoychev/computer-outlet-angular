@@ -29,6 +29,10 @@ export class HeaderComponent {
     return this.router.url === '/catalog'
   }
 
+  get username(): string | undefined {
+    return this.userService.username
+  }
+
 
   logout() {
     this.userService.logout()
